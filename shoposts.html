@@ -1,0 +1,30 @@
+  <html>
+  <head></head>
+  <body>
+  <script type='text/javascript'>
+  function showPosts(json) {
+    var thePosts = '';
+    for (var i = 0; i < numposts; i++) {
+        var entry = json.feed.entry[i];
+        var posttitle = entry.title.$t;
+        var posturl;
+        if (i == json.feed.entry.length) break;
+        thePosts = thePosts + '<div>';
+        theposts = thePosts +'<h3>' + posttitle + '</h3>';
+        if ("content" in entry) {
+            theposts = thePosts + entry.content.$t;
+        } 
+        theposts = thePosts + '</div>'
+
+    }
+    // write the Posts to the  thePosts div using javaScript
+    document.getElementById('thePosts').innerHTML = theposts;
+}
+var numposts = 8;
+var showpostsummary = false;
+var numchars = 100;
+</script>
+<div id="thePosts"></div>
+  <script type="text/javascript" src="http://www.clarity-strategies.com/feeds/posts/default/-/News?orderby=published&alt=json-in-script&callback=showPosts"></script>
+  </body>
+  </html>
