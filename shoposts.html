@@ -10,16 +10,17 @@
         var posturl;
         if (i == json.feed.entry.length) break;
         thePosts = thePosts + '<div>';
-        theposts = thePosts +'<h3>' + posttitle + '</h3>';
+        thePosts = thePosts +'<h3>' + posttitle + '</h3>';
         if ("content" in entry) {
-            theposts = thePosts + entry.content.$t;
+            thePosts = thePosts + entry.content.$t;
         } 
-        theposts = thePosts + '</div>'
+        thePosts = thePosts + '</div>'
 
     }
     // write the Posts to the  thePosts div using javaScript
-    //document.getElementById('thePosts').innerHTML = theposts;
-    document.write(theposts + 'DONE')
+    //document.getElementById('thePosts').innerHTML = thePosts;
+    document.write(thePosts + 'DONE')
+}
 var numposts = 8;
 var showpostsummary = false;
 var numchars = 100;
